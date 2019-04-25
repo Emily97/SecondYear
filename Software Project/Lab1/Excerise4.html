@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript Canvas.Lab01</title>
+	<style>
+		#canvas {
+			border : 1px solid black;
+		}
+	</style>
+</head>
+<body onload="init()">
+
+	<h1>Lab 1d</h1>
+
+	<canvas id="canvas" width=500 height=500></canvas>
+	<script>
+		var can, ctx, complexPath, gradient;
+
+		function init(){
+			canvas = document.getElementById("canvas");
+			ctx = canvas.getContext("2d");
+			complexPath();
+
+			function complexPath(){
+				console.log("hi");
+				ctx.beginPath(); 
+				ctx.moveTo(170, 80); 
+				  ctx.bezierCurveTo(130, 100, 130, 150, 230, 150); 
+				  ctx.bezierCurveTo(250, 180, 320, 180, 340, 150); 
+				  ctx.bezierCurveTo(420, 150, 420, 120, 390, 100); 
+				  ctx.bezierCurveTo(430, 40, 370, 30, 340, 50); 
+				  ctx.bezierCurveTo(320, 5, 250, 20, 250, 50); 
+				  ctx.bezierCurveTo(200, 5, 150, 20, 170, 80); 
+				ctx.closePath(); // complete custom shape
+				ctx.stroke();
+		}
+
+		}
+
+	</script>    
+
+
+</body>
+</html>

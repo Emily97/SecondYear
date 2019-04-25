@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript Canvas.Lab01</title>
+	<style>
+		#canvas {
+			border : 1px solid black;
+		}
+	</style>
+</head>
+<body onload="init()">
+
+	<h1>Lab 1c</h1>
+
+	<canvas id="canvas" width=500 height=500></canvas>
+	<script>
+		var can, ctx, complexPath;
+
+		function init(){
+			canvas = document.getElementById("canvas");
+			ctx = canvas.getContext("2d");
+			complexPath();
+
+			function complexPath(){
+			console.log("hi");
+			ctx.beginPath();
+			ctx.moveTo(20, 20); 
+			  ctx.bezierCurveTo(20,200,200,200,200,20);
+
+			ctx.moveTo(250,20); 
+			ctx.bezierCurveTo(300,200,200,200,250,20); //teardrop
+			ctx.stroke();
+		}
+
+		}
+
+		
+	</script>
+
+
+</body>
+</html>

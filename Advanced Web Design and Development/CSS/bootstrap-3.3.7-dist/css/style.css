@@ -1,0 +1,91 @@
+html {
+	font-size: 1rem;
+}
+
+ul{
+	margin: 0;
+	padding: 0;
+	list-style-type:none;
+	color: #808080;
+}
+
+h3, ol{
+
+	border-bottom: 1px dotted #c8bc9d;
+}
+
+ul, ol{
+	font-family: 'Lora', serif;
+	padding-left: 20px;
+	
+}
+
+ol{
+	color:#424040;
+	padding-bottom: 24px;
+}
+
+p{
+	font-family: 'Lora', serif;
+	font-style: italic;
+	color: #808080;
+	margin-top: 48px;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family: 'Nunito', sans-serif;
+	color:#2F4F4F;
+	/*margin-top: 1.5rem;*/
+}
+body{
+	/*background:url(../24.jpg) 0px 6px;*/
+	line-height: 1.5;
+	font-size: 1em;
+}
+
+h1{
+	font-size:3.375em;
+	margin-top: 22px;
+	margin-bottom: 20px;
+	text-align:center;
+	column-span: all;
+}
+h3{
+	font-size:1.5em;
+	margin-top: 12px;
+	/*margin-bottom: 10px;*/
+}
+
+h4{
+	font-size:1.75em;
+	/*margin-top: 26px;*/
+	margin-bottom: 16px;
+}
+
+.space{
+	margin-top: 48px;
+}
+
+.space2{
+	margin-top: 408px;
+}
+
+.space3{
+	margin-top: 72px;
+}
+
+.space4{
+	margin-top: 96px;
+}
+
+.space5{
+	margin-top: 864px;
+}
+
+.space6{
+	margin-top:96px;
+}
+
+.header{
+	margin-left: -298px;
+}

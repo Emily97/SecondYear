@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+	
+	<head>
+		
+		<title>Canvas 2d - Drawing tools examples</title>
+		<style type="text/css"> 
+			canvas {
+			     border: 1px solid #000000
+				 }
+		</style>
+		<script type="text/javascript">
+		
+			
+			var lineCtx, arcCtx, curveCtx, shapeCtx;
+			var imageObj = new Image();
+			var pattern;
+			imageObj.src = 'http://www.html5canvastutorials.com/demos/assets/wood-pattern.png';
+			
+			
+			
+			function init() {
+				
+				lineCtx =  document.getElementById("lineCanvas").getContext("2d");
+				arcCtx =  document.getElementById("arcCanvas").getContext("2d");
+				curveCtx =  document.getElementById("CurveCanvas").getContext("2d");
+				shapeCtx =  document.getElementById("shapeCanvas").getContext("2d");
+				
+				//load pattern
+				imageObj.onload = function() {
+					pattern = shapeCtx.createPattern(imageObj, 'repeat');
+				}
+				
+				drawLines();
+				drawArcs(arcCtx);
+				drawQuadCurve(curveCtx);
+				drawBezierCurve(curveCtx);
+				drawComplexPath(curveCtx);
+				drawShape(shapeCtx);
+				drawLinearGrad(shapeCtx);
+				drawPattern(shapeCtx);
+			}
+	
+
+
+						
+			function drawLines() {
+			
+				lineCtx.beginPath();
+				lineCtx.moveTo(100, 50);
+				lineCtx.lineTo(450, 50);
+				lineCtx.lineWidth = 10;
+				lineCtx.strokeStyle = '#ff0000';
+				lineCtx.stroke();
+				lineCtx.lineCap = 'butt';
+				lineCtx.closePath();
+				
+				lineCtx.beginPath();
+				lineCtx.moveTo(200,100)
+				lineCtx.lineTo(300, 100);
+				lineCtx.lineWidth = 10;
+				lineCtx.strokeStyle = '#00ff00';
+				lineCtx.lineCap = 'round';
+				lineCtx.stroke();
+				lineCtx.closePath();
+				
+				lineCtx.beginPath();
+				lineCtx.moveTo(100, 150)
+				lineCtx.lineTo(450, 150);
+				lineCtx.lineWidth = 10;
+				lineCtx.strokeStyle = '#0000ff';
+				lineCtx.lineCap = 'square';
+				lineCtx.stroke();
+				lineCtx.closePath();
+			}
+			
+			function drawArcs(context) {
+				   /*var x = 100; 
+					var y = 100;
+					var radius = 75;
+					var startAngle = 1.1 * Math.PI;
+					var endAngle = 1.9 * Math.PI;
+					var counterClockwise = false;
+
+					context.beginPath();
+					context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+					context.lineWidth = 15;
+					context.strokeStyle = 'black';
+					context.stroke();
+					context.closePath();
+					
+					//degtoRad 90 deg
+					x = 300; 
+					y = 100;
+					radius = 75;
+					startAngle = degToRad(360);
+					endAngle = degToRad(90);
+					counterClockwise = false;
+					
+					context.beginPath();
+					context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+					context.lineWidth = 15;
+					context.strokeStyle = 'green';
+					context.stroke();
+					context.closePath();
+					*/
+					//full circle
+					x = 100; 
+					y = 200;
+					radius = 75;
+					startAngle = 0 //degToRad(0);
+					endAngle = 2*Math.PI //degToRad(0);
+					counterClockwise = false;
+					
+					context.beginPath();
+					context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+					context.lineWidth = 15;
+					context.strokeStyle = 'green';
+					context.stroke();
+					context.closePath();
+					
+			}
+			
+			//helper function
+			function degToRad(deg) {
+				var rad = deg * Math.PI/180;
+				return rad;
+			}
+			
+			
+			
+			
+    </script>
+		
+
+			
+
+		
+	</head>
+
+	<body onload="init()">
+		
+		<h2>Drawing a Line</h2>
+		<canvas id="lineCanvas" width="500" height="300">
+			Canvas is not supported
+		</canvas>
+		
+		<h2>Drawing an Arc</h2>
+		<canvas id="arcCanvas" width="500" height="300">
+			Canvas is not supported
+		</canvas>
+		
+		<h2>Curve Canvas</h2>
+		<canvas id="CurveCanvas" width="500" height="300">
+			Canvas is not supported
+		</canvas>
+		
+				
+		<h2>Shapes and Fills</h2>
+		<canvas id="shapeCanvas" width="500" height="300">
+			Canvas is not supported
+		</canvas>
+
+	</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>prac1b Q2</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="./classes/ball.html"></script> 
+	<script src="./classes/utils.html"></script>
+    <script type="text/javascript">
+	
+	$(document).ready(function() {
+		var canvas = document.getElementById("myCanvas");
+		var context = canvas.getContext("2d");
+		var canvasWidth = canvas.width;
+		var canvasHeight = canvas.height;
+		//create ball object 
+		ball = new Ball(10);
+		var xPos = 0;
+		var yPos = 0;
+		var tPos = 2;
+		var scaleX = 400;
+		var translateX = 240;
+		var scaleY = 400;
+		var translateY = 170;
+
+		//sets up animation loop
+		function animate(){
+			//clears the stage after every iteration of the loop
+			//context.clearRect(0,0, canvasWidth, canvasHeight);
+			/*special animation function - accepts the callback function
+			'animate'*/
+			window.requestAnimationFrame(animate, canvas);
+			//movement code goes here
+
+			//parametric equations go here
+			xPos = (tPos/36)*Math.cos(tPos);
+			yPos = (tPos/36)*Math.sin(tPos);
+			/*sets the x and y coordinates of the ball object
+			using x and y properties from Ball class*/
+			// ball.x = xPos;
+			// ball.y = canvasHeight - yPos;
+			ball.y = xPos*scaleX + translateX;
+			ball.x = canvasHeight - (yPos*scaleY + translateY);
+			/*keep it moving by incrementing by a certain amount every frame
+			iteration*/
+			tPos = tPos + 0.1;
+			//use draw method from ball class
+			ball.draw(context);
+		};
+		//call it once to kick it off
+		//after that it recursively calls itself
+		window.requestAnimationFrame(animate, canvas);
+	});
+
+
+
+		</script>
+	</head>  
+ <body>
+	<header>
+	<h1>Cartesian Animation</h1>
+	<h2>Sub-heading goes here</h2>
+	</header>
+  <canvas id="myCanvas" width="640" height="480"
+   style="border:1px solid #000000;">
+  </canvas>
+  </body>
+</html>

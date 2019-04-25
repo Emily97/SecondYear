@@ -1,0 +1,41 @@
+.header {
+    height:100px;
+}
+
+.story01,.story02 {
+    position: relative;
+}
+
+.story01 img,.story02 img{
+    margin-bottom:20px;
+}
+
+.spacer {
+    margin-bottom:20px;
+}
+
+.strikethrough{    
+    position: absolute;
+    top: 81px;
+    left: 0px;
+    width: 96px;
+    height: 7px;
+    background-color: red;
+    opacity: 0.7;
+}
+
+.header ul{
+    float:right;
+}
+
+.header .list-inline>li {
+    display: inline-block;
+    padding-right: 0px;
+    padding-left: 30px;
+    margin-top:10px;
+    font-size: 13px;
+}
+
+.header a{
+    color:black;
+}

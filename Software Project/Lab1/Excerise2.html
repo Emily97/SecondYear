@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript Canvas.Lab01</title>
+	<style>
+		#canvas {
+			border : 1px solid black;
+		}
+	</style>
+</head>
+<body onload="init()">
+
+	<h1>Lab 1b</h1>
+
+	<canvas id="canvas" width=500 height=500></canvas>
+	<script>
+	var can, ctx, drawTriangle, xWidth, yHeight, xSize, ySize, cStroke, cFill, lineWidth;
+
+		//global variables
+		/*
+		var can, context;
+
+		//setting a 2d context
+		can = document.getElementById("canvas");
+		ctx = can.getContext("2d");
+
+		ctx.beginPath();
+		ctx.moveTo(200, 50);
+		ctx.lineTo(300, 180);
+		ctx.lineTo(100, 180);
+		ctx.closePath();
+
+		ctx.fillStyle = "rgba(255,150,50,0.5)";
+		ctx.fill();
+
+		ctx.strokeStyle = "red";
+		ctx.lineWidth = 2.0;
+		ctx.stroke();
+		*/
+		function init(){
+			can = document.getElementById("canvas");
+			ctx = can.getContext("2d");
+			drawTriangle(ctx, 400, 300,100, 100, 5,'green','blue',3);
+		}
+		
+		function drawTriangle(ctx,xWidth, yHeight, xSize, ySize, cStroke, cFill, lineWidth){
+			console.log("hi");
+			xWidth = xWidth;
+			yHeight = yHeight;
+			xSize = xSize;
+			ySize = ySize;
+			cStroke = cStroke;
+			cFill = cFill;
+			lineWidth = lineWidth;
+
+			ctx.beginPath();
+			ctx.moveTo(xWidth, yHeight);
+			ctx.lineTo(xSize+100, ySize+150);
+			ctx.lineTo(xSize+200, ySize+250);
+			ctx.closePath();
+			ctx.fillStyle = cFill;
+			ctx.strokeStyle = cStroke;  
+			ctx.fill(); 
+			ctx.stroke();  
+			
+			ctx.lineWidth = lineWidth;
+
+		}
+	</script>
+
+
+</body>
+</html>

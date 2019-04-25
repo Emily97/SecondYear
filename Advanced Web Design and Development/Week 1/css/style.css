@@ -1,0 +1,32 @@
+body{
+}
+.container{
+	width:1170px;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+.row{
+	width:100%;
+	background-color: yellow;
+}
+
+.rows{
+	width:25%;
+	float:left;
+	background-color: pink;
+}
+.rows2{
+	width:50%;
+	float:left;
+	background-color: grey;
+}
+.rows3{
+	width:33.333%;
+	float:left;
+	background-color: #DF02FF;
+}
+.border{
+	border: groove;
+}

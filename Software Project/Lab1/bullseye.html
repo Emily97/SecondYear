@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+	
+	<head>
+		
+		<title>Canvas 2d - Drawing tools examples</title>
+		<style type="text/css"> 
+			canvas {
+			     border: 1px solid #000000
+				 }
+		</style>
+		<script type="text/javascript">
+		
+			
+			var arcCanvas, arcCtx;
+			
+			
+			
+			function init() {
+			
+				arcCanvas = document.getElementById("arcCanvas");
+				arcCtx    =  arcCanvas.getContext("2d");
+			
+				bullsEye(arcCtx);
+				bullsEyeBetter(arcCtx);
+				
+			}
+			
+
+			
+			function bullsEye(context) {
+				    var x = arcCanvas.width/2; 
+					var y = arcCanvas.height/2;
+					
+					var startAngle = 0;
+					var endAngle = 2* Math.PI;
+					var counterClockwise = false;
+
+					var radius = 201;		
+					context.beginPath();
+					context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+					context.lineWidth = 10;
+					context.fillStyle = 'black';
+					context.fill();
+					context.closePath();
+
+					var radius = 200;					
+					context.beginPath();
+					context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+					context.lineWidth = 10;
+					context.fillStyle = 'white';
+					context.fill();
+					context.closePath();
+
+					var radius = 176;		
+					context.beginPath();
+					context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+					context.lineWidth = 10;
+					context.fillStyle = 'black';
+					context.fill();
+					context.closePath();
+					
+					var radius = 175;					
+					context.beginPath();
+					context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+					context.lineWidth = 10;
+					context.fillStyle = 'white';
+					context.fill();
+					context.closePath();
+
+					var radius = 151;		
+					context.beginPath();
+					context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+					context.lineWidth = 10;
+					context.fillStyle = 'black';
+					context.fill();
+					context.closePath();
+					
+					var radius = 150;			
+					context.beginPath();
+					context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+					context.lineWidth = 10;
+					context.fillStyle = 'blue';
+					context.fill();
+					context.closePath();
+
+					var radius = 126;		
+					context.beginPath();
+					context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+					context.lineWidth = 10;
+					context.fillStyle = 'black';
+					context.fill();
+					context.closePath();
+					
+					var radius = 125;		
+					context.beginPath();
+					context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+					context.lineWidth = 10;
+					context.fillStyle = 'blue';
+					context.fill();
+					context.closePath();
+
+					var radius = 101;		
+					context.beginPath();
+					context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+					context.lineWidth = 10;
+					context.fillStyle = 'black';
+					context.fill();
+					context.closePath();
+
+					var radius = 100;		
+					context.beginPath();
+					context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+					context.lineWidth = 10;
+					context.fillStyle = 'red';
+					context.fill();
+					context.closePath();
+
+					var radius = 81;		
+					context.beginPath();
+					context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+					context.lineWidth = 10;
+					context.fillStyle = 'black';
+					context.fill();
+					context.closePath();
+
+					var radius = 80;		
+					context.beginPath();
+					context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+					context.lineWidth = 10;
+					context.fillStyle = 'red';
+					context.fill();
+					context.closePath();
+
+					var radius = 61;		
+					context.beginPath();
+					context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+					context.lineWidth = 10;
+					context.fillStyle = 'black';
+					context.fill();
+					context.closePath();
+
+					var radius = 60;		
+					context.beginPath();
+					context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+					context.lineWidth = 10;
+					context.fillStyle = 'yellow';
+					context.fill();
+					context.closePath();
+					
+					var radius = 31;		
+					context.beginPath();
+					context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+					context.lineWidth = 10;
+					context.fillStyle = 'black';
+					context.fill();
+					context.closePath();
+
+					var radius = 30;		
+					context.beginPath();
+					context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+					context.lineWidth = 10;
+					context.fillStyle = 'yellow';
+					context.fill();
+					context.closePath();
+							
+							
+			}
+			
+			function bullsEyeBetter(context){
+					var x = arcCanvas.width/2;
+					var y = arcCanvas.height/2;
+					//colours are stored inside an array
+					var colours = ['red', 'green', 'white', 'blue'];
+					//colours[0] -> 'red'
+
+					var startAngle = 0;
+					var endAngle = 2*Math.PI;
+					var counterClockwise = false;
+					context.lineWidth = 15;
+
+					for(var i=0; i<8; i++){
+						var radius = 200 - 5*i;
+						context.beginPath();
+						context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+						context.fillStyle = colours[i%4];
+						context.fill();
+						context.closePath();
+					}
+			}
+			
+			
+			
+			//helper function
+			function degToRad(deg) {
+				var rad = deg * Math.PI/180;
+				return rad;
+			}
+			
+			
+			
+			
+    </script>
+		
+
+			
+
+		
+	</head>
+
+	<body onload="init()">
+		
+		
+		
+		<h2>Archery Target with Arcs</h2>
+		<canvas id="arcCanvas" width="500" height="500">
+			Canvas is not supported
+		</canvas>
+		
+	</body>
+
+</html>

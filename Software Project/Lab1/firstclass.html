@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<title>Sample Canvas</title>
+		<style>
+			canvas {
+					border: 1px solid #000000
+				   }	
+		</style>
+		<script>
+			//global variables
+			var can, context;
+						
+			function init() {
+				//this access the canvas element in the DOM
+				console.log("Init function");
+				//setting a 2d context
+				can = document.getElementById("myCanvas");
+				context = can.getContext("2d");
+				console.log(can, context);
+				
+				var c = can.width/2;
+				//rectangle
+				context.moveTo(c-100, 100);
+				context.lineTo(c+100, 100);
+				context.lineTo(c+100, 200);
+				context.lineTo(c-100, 200);
+				//context.lineTo(c-100, 100);
+				context.closePath();
+				//line1
+				context.moveTo(c-100, 300);
+				context.lineTo(c+100, 300);
+				//line2
+				context.moveTo(c-60, 250);
+				context.lineTo(c+60, 250);
+				//line3
+				context.moveTo(c-40, 225);
+				context.lineTo(c+40, 225);
+				//line4
+				context.moveTo(c-80, 275);
+				context.lineTo(c+80, 275);
+				//formatting commands
+				context.lineWidth = 5;
+				context.strokeStyle = '#ff0000';
+				//js command - make it so
+				context.stroke();
+				
+				
+
+			}
+		</script>
+	</head>
+	<body onload="init()">
+		<canvas id="myCanvas" width="800" height ="600">
+			Your browser can't render the canvas. Please upgrade.
+		</canvas>
+	</body>
+
+</html>

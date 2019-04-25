@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Prac3</title>
+
+  </head>
+  <style type="text/css">
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+
+  <script src="classes/arrow.html"></script>
+	<script type="text/javascript">
+    window.addEventListener("load", function() {
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+    var canvasWidth = canvas.width;
+    var canvasHeight = canvas.height;
+
+    var xPos, yPos;
+
+    arrow = new Arrow(10);
+    arrow.color = "blue";
+    arrow.x = canvasWidth/2;
+    arrow.y = canvasHeight/2;
+    arrow.draw(context);
+    
+
+    canvas.onmousemove = function(e){
+      context.clearRect(0, 0, canvasWidth, canvasHeight);
+
+      var mouse = getMousePos(canvas, e);
+
+      if (mouse.x > arrow.x) {
+        xPos = mouse.x - arrow.x;
+      } else {
+        xPos = -Math.abs(arrow.x - mouse.x);
+      }
+      if (mouse.y > arrow.y) {
+        yPos = mouse.y - arrow.y;
+      } else {
+        yPos = -Math.abs(arrow.y - mouse.y);
+      }
+      arrow.rotation = Math.atan2(yPos,xPos);
+      arrow.draw(context);
+      console.log(xPos + " " + yPos + " " + mouse.y);
+    };
+
+    function getMousePos(canvas, evt) {
+        var rect = canvas.getBoundingClientRect();
+        return {
+          x: evt.clientX - rect.left,
+          y: evt.clientY - rect.top
+        };
+      }
+    
+  });
+
+  </script>
+
+  <boyPos class="boyPos">
+
+	    <canvas id="canvas" width="800" height="600"></canvas>
+
+  </boyPos>
+</html>
